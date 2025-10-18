@@ -1,6 +1,6 @@
-import config from "./config";
 import "./styles/bootstrap.scss";
 import "./styles/globals.scss";
+import config from "./config";
 import type { Metadata } from "next";
 import localFont from "next/font/local";
 
@@ -28,7 +28,12 @@ export const metadata: Metadata = {
     "Financial Tools",
     "Mainstack Services",
   ],
-  authors: [{ name: "Saheed Odulaja", url: "https://mainstack-revenue-filter-nine.vercel.app/" }],
+  authors: [
+    {
+      name: "Saheed Odulaja",
+      url: "https://mainstack-revenue-filter-nine.vercel.app/",
+    },
+  ],
   creator: "Saheed Odulaja",
   publisher: "Saheed Odulaja",
   formatDetection: {
@@ -148,6 +153,8 @@ export const viewport = {
   ],
 };
 
+import Header from "./Components/Layout/Header";
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -155,7 +162,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${degular.variable}`}>{children}</body>
+      <body className={`${degular.variable}`}>
+        <Header />
+        {children}
+      </body>
     </html>
   );
 }
