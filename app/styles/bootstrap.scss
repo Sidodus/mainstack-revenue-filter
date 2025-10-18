@@ -3,6 +3,19 @@
 @import "~bootstrap/scss/variables";
 
 // import custom variables here to override default variables
+// calc(100% - #{2 * 16px})
+// Custom container widths
+// $container-max-widths: (
+//   sm: 83vw,
+//   md: 83vw,
+//   lg: 83vw,
+//   xl: 83vw,
+//   xxl: 83vw //   sm: calc(100% - #{2 * 16px}),
+//   //   md: calc(100% - #{2 * 16px}),
+//   //   lg: calc(100% - #{2 * 16px}),
+//   //   xl: calc(100% - #{2 * 16px}),
+//   //   xxl: calc(100% - #{2 * 16px}),
+// );
 
 // import bootstrap to set changes
 @import "~bootstrap/scss/bootstrap";

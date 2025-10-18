@@ -1,0 +1,272 @@
+@font-face {
+  font-family: "Degular";
+  src: url("/assets/fonts/DegularVariable.ttf") format("truetype");
+  font-style: normal;
+}
+
+.headerContainer {
+  height: 64px;
+  top: 16px;
+  border-radius: 100px;
+  background: #ffffff;
+  border: 2px solid #ffffff;
+  box-shadow: 0px 2px 6px 0px #2d3b430f;
+  padding: 0;
+  position: fixed;
+  left: 50%;
+  transform: translateX(-50%);
+  width: calc(100% - #{2 * 16px});
+  z-index: 1000;
+
+  @media (max-width: 1200px) {
+    width: calc(100% - #{2 * 16px});
+    left: 16px;
+    transform: none;
+  }
+  @media (max-width: 768px) {
+    width: calc(100% - #{2 * 16px});
+    left: 16px;
+    transform: none;
+  }
+  @media (max-width: 576px) {
+    width: calc(100% - #{2 * 16px});
+    left: 16px;
+    transform: none;
+  }
+}
+
+.navbarFluidContainer {
+  padding-left: 24px;
+  padding-right: 24px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 100%;
+}
+
+.logoContainer {
+  padding: 0;
+  display: flex;
+  align-items: center;
+}
+
+.logo {
+  width: 36px;
+  height: 36px;
+}
+
+.navbarToggle {
+  border: none;
+  padding: 0;
+  margin-left: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  .hamburgerIcon {
+    width: 24px;
+    height: 24px;
+    color: #56616b;
+  }
+
+  &:focus {
+    outline: none;
+    box-shadow: none;
+  }
+}
+
+.navLink {
+  font-family: "Degular", sans-serif;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 24px;
+  letter-spacing: -0.4px;
+  color: #56616b;
+  padding: 0.5rem 1rem !important;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin: 0 0.5rem;
+
+  &:hover {
+    color: #000;
+  }
+
+  &.active {
+    color: #000;
+    font-weight: 700;
+  }
+}
+
+.icon {
+  width: 20px;
+  height: 20px;
+  vertical-align: middle;
+}
+
+.navIconLink {
+  padding: 0.5rem 0.75rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  .icon {
+    width: 20px;
+    height: 20px;
+    color: #56616b;
+  }
+
+  &:hover {
+    .icon {
+      color: #000;
+    }
+  }
+}
+
+.dropdownToggle {
+  border-radius: 100px;
+  padding-top: 4px;
+  padding-right: 12px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  gap: 8px;
+  background: #eff1f6;
+}
+
+.userAvatar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  color: white;
+  font-family: "Degular", sans-serif;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 16px;
+  letter-spacing: -0.4px;
+  width: 32px;
+  height: 32px;
+  border: 2px solid transparent;
+  cursor: pointer;
+  background: linear-gradient(138.98deg, #5c6670 2.33%, #131316 96.28%);
+  background-size: cover;
+  background-position: center;
+}
+
+.userAvatarDropdownToggle {
+  padding: 0;
+  border: none;
+  background: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: 0.75rem;
+
+  &:hover,
+  &:focus {
+    background: none;
+    border: none;
+    outline: none;
+    box-shadow: none;
+  }
+}
+
+.customDropdownToggle {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  text-decoration: none;
+  width: auto;
+}
+
+.navWrapper {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+@media (max-width: 991.98px) {
+  .navbar-fluid-container {
+    flex-wrap: wrap;
+  }
+
+  .navbarCollapse {
+    width: 100%;
+    order: 3;
+    margin-top: 16px;
+  }
+
+  .navbarNav {
+    width: 100%;
+    margin-top: 1rem;
+
+    .navLink,
+    .navIconLink {
+      padding: 0.75rem 1rem;
+      width: 100%;
+      text-align: left;
+      justify-content: flex-start;
+      gap: 0.75rem;
+    }
+
+    .navIconLink {
+      justify-content: flex-start;
+    }
+
+    .msAuto {
+      margin-left: 0 !important;
+      width: 100%;
+      flex-direction: column;
+      align-items: flex-start !important;
+    }
+
+    .userAvatarDropdownToggle {
+      margin-left: 0;
+      margin-top: 0.5rem;
+    }
+  }
+}
+
+.active {
+  background: linear-gradient(138.98deg, #5c6670 2.33%, #131316 96.28%);
+  color: #fff !important;
+  border-radius: 100px;
+  padding: 0.5rem 1rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+
+  .icon {
+    color: #fff;
+  }
+
+  &:hover {
+    color: #fff !important;
+  }
+}
+
+.revenueActive {
+  background-color: #000;
+  color: #fff !important;
+  border-radius: 100px;
+  padding: 0.5rem 1rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+
+  .icon {
+    color: #fff;
+  }
+
+  &:hover {
+    background-color: #000;
+    color: #fff !important;
+  }
+}
+
+@media (max-width: 576px) {
+  .userAvatar {
+    width: 32px;
+    height: 32px;
+  }
+}
