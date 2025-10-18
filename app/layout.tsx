@@ -28,7 +28,7 @@ export const metadata: Metadata = {
     "Financial Tools",
     "Mainstack Services",
   ],
-  authors: [{ name: "Saheed Odulaja", url: "https://vercel.app" }],
+  authors: [{ name: "Saheed Odulaja", url: "https://mainstack-revenue-filter-nine.vercel.app/" }],
   creator: "Saheed Odulaja",
   publisher: "Saheed Odulaja",
   formatDetection: {

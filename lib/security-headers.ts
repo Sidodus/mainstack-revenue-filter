@@ -8,7 +8,7 @@ export const TRUSTED_DOMAINS = {
   FRONTEND_URLS: [
     process.env.NODE_ENV === "development"
       ? "https://localhost:3000"
-      : "https://vercel.app",
+      : "https://mainstack-revenue-filter-nine.vercel.app/",
   ],
   EXTERNAL_SERVICES: [
     "https://fonts.googleapis.com",
