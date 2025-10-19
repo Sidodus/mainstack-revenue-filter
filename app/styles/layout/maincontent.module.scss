@@ -1,0 +1,296 @@
+@font-face {
+  font-family: "Degular";
+  src: url("/assets/fonts/DegularVariable.ttf") format("truetype");
+  font-style: normal;
+}
+
+.mainContentContainer {
+  padding-left: 80px; // Offset for the fixed sidebar
+  // padding-top: 80px; // Offset for the header
+  // background-color: #f8f9fa; // Light background for the main content area
+  min-height: 100vh; // Ensure it takes full height
+
+  .contentRow {
+    display: flex;
+    flex-wrap: wrap; // Allow wrapping for responsiveness
+  }
+
+  .mainArea {
+    padding: 20px; // Padding around the main content
+    flex-grow: 1; // Allow main content to grow
+    max-width: 100%; // Ensure it doesn't overflow
+  }
+
+  .mainContentWrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 20px; // Space between sections
+  }
+
+  .topSection {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 12px;
+
+    .balanceInfo {
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+
+      .balanceLabel {
+        font-family: "Degular";
+        font-weight: 500;
+        font-size: 14px;
+        line-height: 16px;
+        letter-spacing: -0.2px;
+        vertical-align: middle;
+        color: #56616b;
+      }
+
+      .balanceRow {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+      }
+
+      .balanceAmount {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        margin-right: 4em;
+
+        .currencyIcon {
+          width: 16px;
+          height: 16px;
+          color: #56616b;
+        }
+
+        .balanceValue {
+          font-family: "Degular";
+          font-weight: 700;
+          font-size: 36px;
+          line-height: 48px;
+          letter-spacing: -1.5px;
+          color: #131316;
+          vertical-align: middle;
+
+          @media screen and (max-width: 767px) {
+            font-size: 18px;
+            line-height: 28px;
+            letter-spacing: -0.8px;
+          }
+        }
+
+        .balanceCurrency {
+          font-family: "Degular";
+          font-weight: 700;
+          font-size: 36px;
+          line-height: 48px;
+          letter-spacing: -1.5px;
+          color: #131316;
+          vertical-align: middle;
+
+          @media screen and (max-width: 767px) {
+            font-size: 18px;
+            line-height: 28px;
+            letter-spacing: -0.8px;
+          }
+        }
+      }
+    }
+
+    .withdrawButton {
+      width: 167px;
+      height: 52px;
+      border-radius: 100px;
+      padding: 14px 28px;
+      gap: 8px;
+      background: #131316;
+      font-family: "Degular";
+      font-weight: 600;
+      font-size: 16px;
+      line-height: 24px;
+      letter-spacing: -0.4px;
+      color: #ffffff;
+      vertical-align: middle;
+      border: none;
+      transition: background-color 0.2s ease-in-out;
+
+      &:hover {
+        background-color: #333;
+      }
+
+      @media screen and (max-width: 767px) {
+        width: 97px;
+        height: 42px;
+        border-radius: 100px;
+        padding: 10px 18px;
+        gap: 8px;
+        font-size: 12px;
+        line-height: 18px;
+        letter-spacing: -0.4px;
+      }
+    }
+  }
+
+  .chartCard {
+    background-color: #ffffff;
+    border-radius: 12px;
+    border: none;
+
+    .card-body {
+      padding: 20px;
+    }
+
+    .cardHeader {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 15px;
+
+      .cardTitle {
+        font-family: "Degular";
+        font-weight: 500;
+        font-size: 18px; // Slightly larger for titles
+        line-height: 24px;
+        letter-spacing: -0.3px;
+        color: #131316;
+        margin: 0;
+      }
+    }
+
+    .chartPlaceholder {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 250px; // Placeholder height
+      background-color: #f0f0f0;
+      border-radius: 8px;
+
+      .chartIcon {
+        width: 40px;
+        height: 40px;
+        color: #888f95;
+        margin-bottom: 10px;
+      }
+
+      p {
+        font-family: "Degular";
+        font-weight: 500;
+        font-size: 16px;
+        line-height: 24px;
+        letter-spacing: -0.3px;
+        color: #56616b;
+        margin: 0;
+      }
+    }
+  }
+
+  .ledgerSection {
+    display: flex;
+    flex-direction: column;
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 12px;
+    gap: 20px;
+
+    .ledgerItem {
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+
+      .ledgerLabel {
+        font-family: "Degular";
+        font-weight: 500;
+        font-size: 14px;
+        line-height: 16px;
+        letter-spacing: -0.2px;
+        color: #56616b;
+        margin-bottom: 5px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      .ledgerValue {
+        font-family: "Degular";
+        font-weight: 700;
+        font-size: 28px;
+        line-height: 38px;
+        letter-spacing: -0.6px;
+        color: #131316;
+      }
+    }
+  }
+
+  // Responsive adjustments
+  @media (max-width: 991.98px) {
+    .mainArea {
+      max-width: 100%; // Full width on smaller screens
+    }
+
+    .topSection {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 15px;
+    }
+
+    .balanceInfo {
+      .balanceAmount {
+        .balanceValue {
+          font-size: 20px;
+          line-height: 24px;
+        }
+      }
+    }
+
+    .ledgerSection {
+      flex-direction: column;
+      align-items: center;
+      gap: 15px;
+    }
+  }
+
+  @media (max-width: 576px) {
+    .mainContentContainer {
+      padding-left: 60px; // Adjust for smaller sidebar
+      padding-top: 70px; // Adjust for smaller header
+    }
+
+    .topSection {
+      padding: 15px;
+    }
+
+    .chartCard {
+      .cardHeader {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+      }
+    }
+  }
+}
+// </content>
+// <task_progress>
+// - [x] Center the `NavbarCollapse` on desktop
+// - [x] Apply a linear-gradient to the active nav page
+// - [x] Use the `RxHamburgerMenu` for the dropdown menu icon
+// - [x] Set the avatar's width and height to 32px on mobile
+// - [x] Set `#revenue` as the default active page
+// - [x] Space out the `NavLink`s
+// - [x] Apply linear-gradient to user avatar
+// - [x] Remove dropdown arrow
+// - [x] Add gap between avatar and dropdown icon
+// - [x] Apply styles to dropdown toggle
+// - [x] Prevent elements from shrinking
+// - [x] Implement Application Body (chart section)
+// - [x] Create reusable parent component for application body
+// - [x] Implement fixed sidebar with icons and tooltips
+// - [x] Fetch data from API
+// - [ ] Construct chart based on transactions
+// - [ ] Apply specified Figma styles
+// - [ ] Ensure responsiveness
