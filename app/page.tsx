@@ -1,7 +1,12 @@
 import React from "react";
+import Sidebar from "./Components/Layout/Sidebar";
 
-const page = () => {
-  return <div>page</div>;
+const Page = () => {
+  return (
+    <div>
+      <Sidebar />
+    </div>
+  );
 };
 
-export default page;
+export default Page;
