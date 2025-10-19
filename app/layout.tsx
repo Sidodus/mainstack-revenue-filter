@@ -3,6 +3,8 @@ import "./styles/globals.scss";
 import config from "./config";
 import type { Metadata } from "next";
 import localFont from "next/font/local";
+import ReduxProvider from "./redux/ReduxProvider";
+import DataProvider from "./Components/DataProvider";
 
 const degular = localFont({
   src: "../public/assets/fonts/DegularVariable.ttf",
@@ -163,8 +165,11 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${degular.variable}`}>
-        <Header />
-        {children}
+        <ReduxProvider>
+          <DataProvider />
+          <Header />
+          {children}
+        </ReduxProvider>
       </body>
     </html>
   );
