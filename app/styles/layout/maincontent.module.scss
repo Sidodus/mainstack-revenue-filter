@@ -5,26 +5,24 @@
 }
 
 .mainContentContainer {
-  padding-left: 80px; // Offset for the fixed sidebar
-  // padding-top: 80px; // Offset for the header
-  // background-color: #f8f9fa; // Light background for the main content area
-  min-height: 100vh; // Ensure it takes full height
+  padding-left: 80px;
+  min-height: 100vh;
 
   .contentRow {
     display: flex;
-    flex-wrap: wrap; // Allow wrapping for responsiveness
+    flex-wrap: wrap;
   }
 
   .mainArea {
-    padding: 20px; // Padding around the main content
-    flex-grow: 1; // Allow main content to grow
-    max-width: 100%; // Ensure it doesn't overflow
+    padding: 20px;
+    flex-grow: 1;
+    max-width: 100%;
   }
 
   .mainContentWrapper {
     display: flex;
     flex-direction: column;
-    gap: 20px; // Space between sections
+    gap: 20px;
   }
 
   .topSection {
@@ -154,7 +152,7 @@
       .cardTitle {
         font-family: "Degular";
         font-weight: 500;
-        font-size: 18px; // Slightly larger for titles
+        font-size: 18px;
         line-height: 24px;
         letter-spacing: -0.3px;
         color: #131316;
@@ -167,7 +165,7 @@
       flex-direction: column;
       justify-content: center;
       align-items: center;
-      height: 250px; // Placeholder height
+      height: 250px;
       background-color: #f0f0f0;
       border-radius: 8px;
 
@@ -227,10 +225,9 @@
     }
   }
 
-  // Responsive adjustments
   @media (max-width: 991.98px) {
     .mainArea {
-      max-width: 100%; // Full width on smaller screens
+      max-width: 100%;
     }
 
     .topSection {
@@ -257,8 +254,8 @@
 
   @media (max-width: 576px) {
     .mainContentContainer {
-      padding-left: 60px; // Adjust for smaller sidebar
-      padding-top: 70px; // Adjust for smaller header
+      padding-left: 60px;
+      padding-top: 70px;
     }
 
     .topSection {
@@ -274,23 +271,3 @@
     }
   }
 }
-// </content>
-// <task_progress>
-// - [x] Center the `NavbarCollapse` on desktop
-// - [x] Apply a linear-gradient to the active nav page
-// - [x] Use the `RxHamburgerMenu` for the dropdown menu icon
-// - [x] Set the avatar's width and height to 32px on mobile
-// - [x] Set `#revenue` as the default active page
-// - [x] Space out the `NavLink`s
-// - [x] Apply linear-gradient to user avatar
-// - [x] Remove dropdown arrow
-// - [x] Add gap between avatar and dropdown icon
-// - [x] Apply styles to dropdown toggle
-// - [x] Prevent elements from shrinking
-// - [x] Implement Application Body (chart section)
-// - [x] Create reusable parent component for application body
-// - [x] Implement fixed sidebar with icons and tooltips
-// - [x] Fetch data from API
-// - [ ] Construct chart based on transactions
-// - [ ] Apply specified Figma styles
-// - [ ] Ensure responsiveness
