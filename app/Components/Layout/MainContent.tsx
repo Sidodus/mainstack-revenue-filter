@@ -1,18 +1,8 @@
 "use client";
 
 import React from "react";
-import {
-  Container,
-  Row,
-  Col,
-  Card,
-  Button,
-  OverlayTrigger,
-  Tooltip,
-} from "react-bootstrap";
+import { Container, Row, Col, Card, Button } from "react-bootstrap";
 import styles from "@/app/styles/layout/maincontent.module.scss";
-import { MdOutlineInsertChart } from "react-icons/md";
-import { FaMoneyBills } from "react-icons/fa6";
 import { RiErrorWarningLine } from "react-icons/ri";
 import { Line } from "react-chartjs-2";
 import {
@@ -22,7 +12,6 @@ import {
   PointElement,
   LineElement,
   Title,
-  // Tooltip,
   Legend,
 } from "chart.js";
 import { useSelector } from "@/app/redux/store";
