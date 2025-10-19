@@ -28,6 +28,8 @@ import {
 import { RiApps2AiLine } from "react-icons/ri";
 import { FaMoneyBills } from "react-icons/fa6";
 import { GoHome } from "react-icons/go";
+import { useSelector } from "@/app/redux/store";
+import { selectServerUser } from "@/app/reduxFeatures/app/authUser";
 
 const CustomToggle = React.forwardRef<
   HTMLAnchorElement,
@@ -54,6 +56,7 @@ CustomToggle.displayName = "CustomToggle";
 
 const Header = () => {
   const [activeLink, setActiveLink] = useState("#revenue");
+  const user = useSelector(selectServerUser);
 
   useEffect(() => {
     const handleHashChange = () => {
@@ -70,8 +73,9 @@ const Header = () => {
     };
   }, []);
 
-  const userName = "O J"; // Example user name to test the specific gradient
-  const userAvatar = generateUserAvatar(userName);
+  const userAvatar = generateUserAvatar(
+    user ? `${user.first_name} ${user.last_name}` : "Guest User"
+  );
 
   return (
     <Navbar className={styles.headerContainer} expand="lg" fixed="top">
