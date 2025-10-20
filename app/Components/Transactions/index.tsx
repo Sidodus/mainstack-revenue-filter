@@ -1,13 +1,18 @@
 "use client";
 
-import React, { useMemo } from "react";
+import React, { useState, useMemo } from "react";
 import { Container, Row, Col } from "react-bootstrap";
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
 import { RootState } from "@/app/redux/store";
 import TransactionItem from "./TransactionItem";
+import FilterModal from "./FilterModal";
 import styles from "@/app/styles/transactions/transaction.module.scss";
 import Papa from "papaparse";
-import { selectFilters } from "@/app/reduxFeatures/app/filters";
+import {
+  FilterState,
+  selectFilters,
+  setFilters,
+} from "@/app/reduxFeatures/app/filters";
 import {
   MdOutlineFileDownload,
   MdOutlineKeyboardArrowDown,
@@ -18,6 +23,8 @@ const Transactions = () => {
     (state: RootState) => state.transactions
   );
   const filters = useSelector(selectFilters);
+  const dispatch = useDispatch();
+  const [showFilterModal, setShowFilterModal] = useState(false);
 
   // Filter transactions based on selected filters
   const filteredTransactions = useMemo(() => {
@@ -142,6 +149,11 @@ const Transactions = () => {
     return count;
   };
 
+  const handleApplyFilters = (newFilters: FilterState) => {
+    dispatch(setFilters(newFilters));
+    setShowFilterModal(false);
+  };
+
   return (
     <Container fluid className={styles.transactionsContainer}>
       <Row>
@@ -157,7 +169,10 @@ const Transactions = () => {
                 </p>
               </div>
               <div className={styles.actions}>
-                <button className={styles.filterButton}>
+                <button
+                  className={styles.filterButton}
+                  onClick={() => setShowFilterModal(true)}
+                >
                   <span>Filter</span>
                   {getActiveFilterCount() > 0 && (
                     <span className={styles.filterBadge}>
@@ -191,6 +206,14 @@ const Transactions = () => {
         </Col>
         <Col lg={1} md={1} sm={0}></Col>
       </Row>
+
+      {showFilterModal && (
+        <FilterModal
+          onClose={() => setShowFilterModal(false)}
+          currentFilters={filters}
+          onApplyFilters={handleApplyFilters}
+        />
+      )}
     </Container>
   );
 };
