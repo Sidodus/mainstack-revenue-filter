@@ -2,6 +2,7 @@ import { configureStore } from "@reduxjs/toolkit";
 import serverAuthUserReducer from "@/app/reduxFeatures/app/authUser";
 import walletReducer from "@/app/reduxFeatures/app/wallet";
 import transactionsReducer from "@/app/reduxFeatures/app/transactions";
+import filtersReducer from "@/app/reduxFeatures/app/filters";
 
 import {
   useDispatch as useDispatchBase,
@@ -16,6 +17,7 @@ export const store = configureStore({
     serverAuthUser: serverAuthUserReducer,
     wallet: walletReducer,
     transactions: transactionsReducer,
+    filters: filtersReducer,
   },
   devTools: process.env.NODE_ENV === "production" ? false : true,
   middleware: (getDefaultMiddleware) =>
