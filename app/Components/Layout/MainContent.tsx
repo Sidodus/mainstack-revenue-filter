@@ -194,7 +194,9 @@ const MainContent: React.FC = () => {
                   style={{ float: "right" }}
                 />
               </div>
-              <p className={styles.ledgerValue}>{totalPayout}</p>
+              <p
+                className={styles.ledgerValue}
+              >{`${currency} ${totalPayout}`}</p>
             </div>
             <div className={styles.ledgerItem}>
               <div className={styles.ledgerLabel}>
@@ -205,7 +207,9 @@ const MainContent: React.FC = () => {
                   style={{ float: "right" }}
                 />
               </div>
-              <p className={styles.ledgerValue}>{totalRevenue}</p>
+              <p
+                className={styles.ledgerValue}
+              >{`${currency} ${totalRevenue}`}</p>
             </div>
             <div className={styles.ledgerItem}>
               <div className={styles.ledgerLabel}>
@@ -216,7 +220,9 @@ const MainContent: React.FC = () => {
                   style={{ float: "right" }}
                 />
               </div>
-              <p className={styles.ledgerValue}>{pendingPayout}</p>
+              <p
+                className={styles.ledgerValue}
+              >{`${currency} ${pendingPayout}`}</p>
             </div>
           </div>
         </Col>
