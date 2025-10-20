@@ -56,11 +56,12 @@ CustomToggle.displayName = "CustomToggle";
 
 const Header = () => {
   const [activeLink, setActiveLink] = useState("#revenue");
+  const [expanded, setExpanded] = useState(false);
   const user = useSelector(selectServerUser);
 
   useEffect(() => {
     const handleHashChange = () => {
-      setActiveLink(window.location.hash);
+      setActiveLink(window.location.hash || "#revenue");
     };
 
     // Set initial active link
@@ -77,8 +78,22 @@ const Header = () => {
     user ? `${user.first_name} ${user.last_name}` : "Guest User"
   );
 
+  const handleNavClick = (href: string) => {
+    setActiveLink(href);
+    // Auto-collapse on mobile after navigation
+    setExpanded(false);
+    // Update the URL hash
+    window.location.hash = href;
+  };
+
   return (
-    <Navbar className={styles.headerContainer} expand="lg" fixed="top">
+    <Navbar
+      className={styles.headerContainer}
+      expand="lg"
+      fixed="top"
+      expanded={expanded}
+      onToggle={(expanded) => setExpanded(expanded)}
+    >
       <Container fluid className={styles.navbarFluidContainer}>
         <NavbarBrand href="#home" className={styles.logoContainer}>
           <Image
@@ -97,7 +112,7 @@ const Header = () => {
 
         <NavbarCollapse
           id="basic-navbar-nav"
-          className="justify-content-center"
+          className={`justify-content-center ${styles.navbarCollapse}`}
         >
           <div className={styles.navWrapper}>
             <Nav>
@@ -106,6 +121,10 @@ const Header = () => {
                 className={`${styles.navLink} ${
                   activeLink === "#home" ? styles.active : ""
                 }`}
+                onClick={(e) => {
+                  e.preventDefault();
+                  handleNavClick("#home");
+                }}
               >
                 <GoHome className={styles.icon} /> Home
               </NavLink>
@@ -114,6 +133,10 @@ const Header = () => {
                 className={`${styles.navLink} ${
                   activeLink === "#analytics" ? styles.active : ""
                 }`}
+                onClick={(e) => {
+                  e.preventDefault();
+                  handleNavClick("#analytics");
+                }}
               >
                 <MdOutlineInsertChart className={styles.icon} /> Analytics
               </NavLink>
@@ -122,6 +145,10 @@ const Header = () => {
                 className={`${styles.navLink} ${
                   activeLink === "#revenue" ? styles.revenueActive : ""
                 }`}
+                onClick={(e) => {
+                  e.preventDefault();
+                  handleNavClick("#revenue");
+                }}
               >
                 <FaMoneyBills className={styles.icon} /> Revenue
               </NavLink>
@@ -130,6 +157,10 @@ const Header = () => {
                 className={`${styles.navLink} ${
                   activeLink === "#crm" ? styles.active : ""
                 }`}
+                onClick={(e) => {
+                  e.preventDefault();
+                  handleNavClick("#crm");
+                }}
               >
                 <MdOutlinePeopleAlt className={styles.icon} /> CRM
               </NavLink>
@@ -138,6 +169,10 @@ const Header = () => {
                 className={`${styles.navLink} ${
                   activeLink === "#apps" ? styles.active : ""
                 }`}
+                onClick={(e) => {
+                  e.preventDefault();
+                  handleNavClick("#apps");
+                }}
               >
                 <RiApps2AiLine className={styles.icon} /> Apps
               </NavLink>
